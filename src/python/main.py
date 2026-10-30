@@ -42,3 +42,12 @@ def renderizar(lista):
         card.appendChild(norma_texto)
 
         grid.appendChild(card)
+def validar_entrada(texto):
+    texto = texto.strip()
+    if not texto:
+        return False, "Digite o nome de uma fruta."
+    if len(texto) > 30:
+        return False, "Máximo de 30 caracteres."
+    if not re.fullmatch(r"[A-Za-zÀ-ÿ0-9 ]+", texto):
+        return False, "Caracteres inválidos."
+    return True, texto
