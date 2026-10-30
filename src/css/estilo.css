@@ -71,3 +71,20 @@ header {
     height: 160px;
     object-fit: contain;
 }
+.telemetria {
+    background: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 12px;
+    border: 1px solid #e6ebe4;
+}
+
+.telemetria h2 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+}
+
+.telemetria p {
+    color: #777;
+    font-size: 13px;
+}
