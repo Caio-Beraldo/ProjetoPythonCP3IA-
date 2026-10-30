@@ -74,3 +74,14 @@ def buscar(event):
         if not filtradas:
             msg.innerText = "Nenhuma fruta encontrada."
     atualizar_telemetria()
+def tecla_pressionada(event):
+    if event.key == "Enter":
+        buscar(event)
+document.getElementById("btn-buscar").addEventListener(
+    "click", create_proxy(buscar)
+)
+document.getElementById("busca").addEventListener(
+    "keydown", create_proxy(tecla_pressionada)
+)
+
+renderizar(frutas)
