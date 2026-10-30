@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hortifruti</title>
+    <link rel="stylesheet" href="src/css/estilo.css">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <script type="py"
+        src="./src/python/main.py"
+        config='{"packages":["numpy"],"files":{"./src/python/dados.json":"./dados.json"}}'>
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Hortifruti</h1>
+        <p>Frutas frescas e qualidade todos os dias!</p>
+    </header>
+<main>
+    <section class="banner">
+        <div>
+            <h2>Mais saúde no seu dia!</h2>
+            <p>
+                Confira nossas frutas, escolha suas favoritas e aproveite o melhor da natureza.
+            </p>
+        </div>
+    </section>
+    <section class="produtos">
+        <div class="titulo">
+            <h2>Nossas frutas</h2>
+            <p>Encontre aqui suas frutas favoritas.</p>
+        </div>
+        <section class="busca">
+            <input
+                type="text"
+                id="busca"
+                placeholder="Digite o nome de uma fruta..."
+                maxlength="30"
+            >
+            <button id="btn-buscar">Buscar</button>
+            <p id="mensagem"></p>
+        </section>
+        <section id="grid" class="grid"></section>
+    </section>
+    <section class="telemetria">
+        <h2>Monitoramento do sistema</h2>
+        <p id="telemetria">
+            Buscas: 0 | Bloqueadas: 0 | Tempo: 0s
+        </p>
+    </section>
+</main>
+</body>
+</html>

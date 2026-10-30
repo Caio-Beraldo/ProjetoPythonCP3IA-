@@ -1,0 +1,211 @@
+:root {
+    --verde: #38834c;
+    --verde-escuro: #246239;
+    --verde-claro: #e7f3e8;
+    --fundo: #f7f9f5;
+    --branco: #ffffff;
+    --texto: #303b32;
+    --cinza: #777;
+    --raio: 12px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+}
+header {
+    background: var(--verde);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+header p {
+    font-size: 14px;
+}
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 20px;
+}
+.banner {
+    background: var(--verde-claro);
+    border-radius: var(--raio);
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.banner h2 {
+    color: var(--verde-escuro);
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+.banner p {
+    color: #56665a;
+    line-height: 1.6;
+    max-width: 450px;
+}
+.banner span {
+    font-size: 45px;
+}
+.produtos {
+    margin-bottom: 35px;
+}
+.titulo {
+    margin-bottom: 20px;
+}
+.titulo h2 {
+    color: var(--verde-escuro);
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+.titulo p {
+    color: var(--cinza);
+    font-size: 14px;
+}
+.busca {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.busca input {
+    flex: 1;
+    min-width: 200px;
+    padding: 14px;
+    border: 1px solid #d9e2d8;
+    border-radius: var(--raio);
+    outline: none;
+    font-size: 14px;
+}
+.busca input:focus {
+    border-color: var(--verde);
+}
+.busca button {
+    padding: 14px 25px;
+    background: var(--verde);
+    color: white;
+    border: none;
+    border-radius: var(--raio);
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+.busca button:hover {
+    background: var(--verde-escuro);
+}
+#mensagem {
+    width: 100%;
+    color: #d9534f;
+    font-size: 13px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: var(--branco);
+    border: 1px solid #e6ebe4;
+    border-radius: var(--raio);
+    padding: 15px;
+    text-align: center;
+    transition: .3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+}
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+.card h3 {
+    color: var(--verde-escuro);
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+.card p {
+    color: var(--cinza);
+    font-size: 13px;
+    margin-top: 7px;
+}
+.card .preco {
+    color: var(--verde);
+    font-size: 18px;
+    font-weight: bold;
+}
+.card .norma {
+    display: inline-block;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+.telemetria {
+    background: white;
+    border: 1px solid #e6ebe4;
+    border-radius: var(--raio);
+    padding: 20px;
+    margin-top: 35px;
+}
+.telemetria h2 {
+    color: var(--verde-escuro);
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.telemetria p {
+    color: var(--cinza);
+    font-size: 13px;
+}
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 27px;
+    }
+    .banner {
+        padding: 25px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .banner h2 {
+        font-size: 23px;
+    }
+    .banner span {
+        font-size: 35px;
+    }
+    .busca button {
+        width: 100%;
+    }
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .card {
+        padding: 10px;
+    }
+    .card img {
+        height: 120px;
+    }
+    .card h3 {
+        font-size: 17px;
+    }
+}
+@media (max-width: 350px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
