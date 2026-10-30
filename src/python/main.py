@@ -51,3 +51,26 @@ def validar_entrada(texto):
     if not re.fullmatch(r"[A-Za-zÀ-ÿ0-9 ]+", texto):
         return False, "Caracteres inválidos."
     return True, texto
+def buscar(event):
+    texto = document.getElementById("busca").value
+    msg = document.getElementById("mensagem")
+    if not texto.strip():
+        msg.innerText = ""
+        renderizar(frutas)
+        atualizar_telemetria()
+        return
+    ok, resultado = validar_entrada(texto)
+    if not ok:
+        telemetria["bloqueadas"] += 1
+        msg.innerText = resultado
+    else:
+        telemetria["buscas"] += 1
+        msg.innerText = ""
+        filtradas = [
+            fruta for fruta in frutas
+            if resultado.lower() in fruta["nome"].lower()
+        ]
+        renderizar(filtradas)
+        if not filtradas:
+            msg.innerText = "Nenhuma fruta encontrada."
+    atualizar_telemetria()
