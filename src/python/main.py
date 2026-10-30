@@ -85,3 +85,19 @@ document.getElementById("busca").addEventListener(
 )
 
 renderizar(frutas)
+
+telemetria = {
+    "buscas": 0,
+    "bloqueadas": 0,
+    "inicio": time.time()
+}
+def atualizar_telemetria():
+
+    seg = int(time.time() - telemetria["inicio"])
+
+    document.getElementById("telemetria").innerText = (
+        f'Buscas: {telemetria["buscas"]} | '
+        f'Bloqueadas: {telemetria["bloqueadas"]} | '
+        f'Tempo: {seg}s'
+    )
+
